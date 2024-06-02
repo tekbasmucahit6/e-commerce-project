@@ -53,8 +53,30 @@ function SingleProduct() {
                 </div>
 
                 <div className='flex justify-center items-center gap-x-16 mt-10'>
-                <b className='text-yellow-500 flex items-center gap-3'><FaRegStar /> {product.rating}</b>
                 <b className='text-red-600 flex items-center gap-3'><IoPricetag /> {product.price} </b>
+                </div>
+
+                <div className='flex justify-center items-center mt-10 gap-20'>
+                    <button className='bg-green-600 px-7 py-4 rounded-lg text-white'>SATIN AL</button>
+                    <button className='bg-red-600 px-7 py-4 rounded-lg text-white'>SEPETE EKLE</button>
+                </div>
+
+                <hr className='mt-10  border-2' />
+
+                <div className='flex justify-center items-center mt-10 '>
+                    <div className='grid-rows-2'>
+                        <div className='flex  text-3xl gap-5 text-yellow-400'>
+                            <FaRegStar />
+                            <FaRegStar />
+                            <FaRegStar />
+                            <FaRegStar />
+                            <FaRegStar />
+                        </div>
+
+                        <div className='flex justify-center items-center mt-5'>
+                            <b className='font-mono text-2xl'>{product.rating}</b>
+                        </div>
+                    </div>
                 </div>
 
                 <div className='justify-center items-center mt-10'>
