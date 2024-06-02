@@ -13,6 +13,11 @@ function SingleData({dt,i}) {
             <img className='max-w-48' src={dt.thumbnail} alt="" />
         </div>
         {/* products img finish */}
+        {/* availebility status start */}
+        <div className='flex justify-end items-center mt-10  mb-10'>
+            <b className='bg-red-700 p-4 text-white font-mono rounded-lg animate-pulse transition-all'>{dt.availabilityStatus}</b>
+        </div>
+        {/* availebility status finish */}
         {/* products title start */}
         <div className='flex justify-center items-center'>
             <b>{dt.title}</b>

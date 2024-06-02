@@ -3,18 +3,31 @@ import { useParams } from 'react-router-dom'
 import Header from '../components/Header'
 import { IoPricetag } from "react-icons/io5";
 import { FaRegStar } from "react-icons/fa";
+import Comments from '../components/Comments';
 
 function SingleProduct() {
+    // parametrenin alınması
     const id = useParams()
 
+    // product state nin tanımlaması
     const [product,setProduct] = useState()
     console.log(product)
 
+    // yorumlar için state tanımlaması
+    const [reviews,setReviews] = useState();
+    console.log(reviews)
+
     console.log(id)
+    // linkin id ye göre yeniden yapılandırlıması
     const link = `https://dummyjson.com/products/${id.id}`
+    // sayfa yüklendiğinde apide ki verilerin çekilmesi
     useEffect(() => {
-        fetch(link).then(res => res.json()).then(data => setProduct(data))
+        fetch(link).then(res => res.json()).then(data => {setProduct(data); setReviews(data.reviews)})
     },[])
+
+
+
+   
   return (
     <div>
         <div>
@@ -22,7 +35,7 @@ function SingleProduct() {
         </div>
         {
             product?
-            <div className='flex justify-center items-center h-screen p-5'>
+            <div className='flex justify-center items-center p-5'>
             <div className='grid'>
                 
                 
@@ -44,8 +57,12 @@ function SingleProduct() {
                 <b className='text-red-600 flex items-center gap-3'><IoPricetag /> {product.price} </b>
                 </div>
 
-                <div>
-
+                <div className='justify-center items-center mt-10'>
+                   {
+                    reviews.map((dt,i) => (
+                        <Comments data={dt} key={i} />
+                    ))
+                   }
                 </div>
 
             </div>
