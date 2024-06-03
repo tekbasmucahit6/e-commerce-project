@@ -12,7 +12,7 @@ function Products() {
   return (
     <>
         <div className='flex justify-center items-center mt-10 mb-10'>
-            <b>shopping center</b>
+            <b className='font-mono bg-orange-600 p-5 rounded text-white'>KEYİFLİ ALIŞVERİŞLER :)</b>
         </div>
     <div className='grid grid-cols-1 p-5 gap-5 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 justify-center items-cente'>
         {
