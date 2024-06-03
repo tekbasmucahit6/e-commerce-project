@@ -1,7 +1,7 @@
 import React from 'react'
 import { IoPricetag } from "react-icons/io5";
 import { FaRegStar } from "react-icons/fa";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function SingleData({dt,i}) {
     const navigate = useNavigate()
@@ -10,7 +10,7 @@ function SingleData({dt,i}) {
     <div key={i} className='border border-dark p-5 rounded shadow-lg'>
         {/* products img start */}
         <div className='flex justify-center items-center'>
-            <img className='max-w-48' src={dt.thumbnail} alt="" />
+            <img className='max-w-48' src={dt.thumbnail?dt.thumbnail:"https://w7.pngwing.com/pngs/369/542/png-transparent-computer-icons-loading-miscellaneous-hand-auto-part.png"} alt="" />
         </div>
         {/* products img finish */}
         {/* availebility status start */}
