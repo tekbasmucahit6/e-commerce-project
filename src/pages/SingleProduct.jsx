@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import { IoPricetag } from "react-icons/io5";
 import { FaRegStar } from "react-icons/fa";
 import Comments from '../components/Comments';
+import Footer from '../components/Footer';
 
 function SingleProduct() {
     // parametrenin alınması
@@ -42,7 +43,7 @@ function SingleProduct() {
                         <img src={product.thumbnail} alt="" />
                     </div>
 
-                    <div className='grid gird-rows-4'>
+                    <div className='grid gird-rows-5'>
                         <div className='flex justify-center items-center mt-10'>
                             <b>{product.title}</b>
                         </div>
@@ -52,9 +53,12 @@ function SingleProduct() {
                         <div className='flex justify-center items-center mt-10'>
                             <b className='text-red-600 text-center text-2xl'>{product.price}</b>
                         </div>
+                        <div className='flex justify-center items-center mt-10'>
+                            <i className='text-orange-500 font-mono font-semibold'>stok : {product.stock}</i>
+                        </div>
                         <div className='flex justify-center items-center mt-16 gap-10'>
-                            <b className='bg-red-600 text-white p-4 rounded-xl'>SEPETE EKLE</b>
-                            <b className='bg-green-600 text-white p-4 rounded-xl'>SATIN AL</b>
+                            <button className='bg-red-600 text-white p-4 rounded-xl hover:bg-red-700'>SEPETE EKLE</button>
+                            <button className='bg-green-600 text-white p-4 rounded-xl hover:bg-green-700'>SATIN AL</button>
                         </div>
                     </div>
                 </div>
@@ -92,6 +96,11 @@ function SingleProduct() {
             <div className='text-3xl font-mono  text-center flex justify-center items-center h-screen'>YÜKLENİYOR</div>
 
         }
+
+
+        <div>
+            <Footer />
+        </div>
         
     </div>
   )
