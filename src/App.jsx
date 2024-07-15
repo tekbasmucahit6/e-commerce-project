@@ -1,6 +1,6 @@
 import {BrowserRouter as Router , Routes ,Route} from "react-router-dom"
-import Main from "./pages/Main"
-import SingleProduct from "./pages/SingleProduct"
+import Index from "./pages/IndexPage/Index"
+import Details from "./pages/DetailsPage/Details"
 function App() {
 
 
@@ -8,8 +8,8 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Main/>} />
-          <Route path="/product/:id" element={<SingleProduct />} />
+          <Route path="/" element={<Index/>} />
+          <Route path="/product/:id" element={<Details />} />
         </Routes>
       </Router>
     </>
